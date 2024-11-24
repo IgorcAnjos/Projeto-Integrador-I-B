@@ -44,6 +44,10 @@ banco de dados MySQL utilizado pelo projeto.
 
 # Banco de dados
 
+## Modelo Conceitual
+
+![PI_IB Modelo conceitual 1.png](assets/PI_IB%20Modelo%20conceitual%201.png)
+
 ## Modelo Lógico
 
 ![PNG - Modelo Lógico.png](assets/PNG%20-%20Modelo%20L%C3%B3gico.png)

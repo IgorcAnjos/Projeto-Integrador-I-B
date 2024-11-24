@@ -1,0 +1,2171 @@
+{
+	"info": {
+		"_postman_id": "4e158ac1-e315-4d91-85d2-0162845bd705",
+		"name": "PI I-B",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21602235"
+	},
+	"item": [
+		{
+			"name": "Aluguel",
+			"item": [
+				{
+					"name": "Buscar alugueis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/aluguel",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aluguel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/aluguel",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aluguel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Nov 2024 16:59:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "517"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"livroId\": 1,\n        \"estudanteMatricula\": 1,\n        \"inicioReserva\": \"nov. 1, 2024\",\n        \"dias\": 7,\n        \"fimEstimado\": \"nov. 8, 2024\",\n        \"fimReserva\": \"nov. 8, 2024\",\n        \"valorEstimado\": 24.5,\n        \"valorTotal\": 24.5\n    },\n    {\n        \"id\": 2,\n        \"livroId\": 2,\n        \"estudanteMatricula\": 1,\n        \"inicioReserva\": \"out. 15, 2024\",\n        \"dias\": 5,\n        \"fimEstimado\": \"out. 20, 2024\",\n        \"fimReserva\": \"out. 22, 2024\",\n        \"valorEstimado\": 20,\n        \"valorTotal\": 28\n    },\n    {\n        \"id\": 3,\n        \"livroId\": 3,\n        \"estudanteMatricula\": 1,\n        \"inicioReserva\": \"nov. 5, 2024\",\n        \"dias\": 10,\n        \"fimEstimado\": \"nov. 15, 2024\",\n        \"valorEstimado\": 35,\n        \"valorTotal\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Buscar aluguel por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/aluguel/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aluguel",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/aluguel/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aluguel",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 22 Nov 2024 01:46:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "154"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"livroId\": 1,\n    \"estudanteMatricula\": 1,\n    \"inicioReserva\": \"nov. 16, 2024\",\n    \"dias\": 10,\n    \"fimEstimado\": \"nov. 26, 2024\",\n    \"valorEstimado\": 35,\n    \"valorTotal\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletar aluguel por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/aluguel/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aluguel",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "409 - Aluguel não registrados",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/aluguel/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aluguel",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "21"
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 19:33:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								}
+							],
+							"cookie": [],
+							"body": "Livro não encontrado. id: 20"
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/aluguel/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aluguel",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 19:35:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Criar Aluguel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"livroId\": 1,\r\n    \"estudanteMatricula\": 1,\r\n    \"inicioReserva\": \"2024-11-18\",\r\n    \"dias\": 2,\r\n    \"fimEstimado\": \"2024-11-20\",\r\n    \"fimReserva\": \"2024-11-20\",\r\n    \"valorEstimado\": 34.87,\r\n    \"valorTotal\": 89.63\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/aluguel",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aluguel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATED",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"livroId\": 1,\r\n    \"estudanteMatricula\": 1,\r\n    \"inicioReserva\": \"2024-11-18\",\r\n    \"dias\": 2,\r\n    \"fimEstimado\": \"2024-11-20\",\r\n    \"fimReserva\": \"2024-11-20\",\r\n    \"valorEstimado\": 34.87,\r\n    \"valorTotal\": 89.63\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/aluguel",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aluguel"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 21:51:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "185"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 16,\n    \"livroId\": 1,\n    \"estudanteMatricula\": 1,\n    \"inicioReserva\": \"nov. 17, 2024\",\n    \"dias\": 2,\n    \"fimEstimado\": \"nov. 19, 2024\",\n    \"fimReserva\": \"nov. 19, 2024\",\n    \"valorEstimado\": 34.87,\n    \"valorTotal\": 89.63\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualizar Aluguel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"livroId\": 1,\r\n    \"estudanteMatricula\": 1,\r\n    \"inicioReserva\": \"2024-11-18\",\r\n    \"dias\": 2,\r\n    \"fimEstimado\": \"2024-11-20\",\r\n    \"fimReserva\": \"2024-11-20\",\r\n    \"valorEstimado\": 34.87,\r\n    \"valorTotal\": 89.63\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/aluguel/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aluguel",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"livroId\": 1,\r\n    \"estudanteMatricula\": 1,\r\n    \"inicioReserva\": \"2024-11-18\",\r\n    \"dias\": 2,\r\n    \"fimEstimado\": \"2024-11-20\",\r\n    \"fimReserva\": \"2024-11-20\",\r\n    \"valorEstimado\": 34.87,\r\n    \"valorTotal\": 89.63\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/aluguel/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aluguel",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 22 Nov 2024 00:31:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"livroId\": 4,\n    \"estudanteMatricula\": 1,\n    \"inicioReserva\": \"nov. 17, 2024\",\n    \"dias\": 2,\n    \"fimEstimado\": \"nov. 19, 2024\",\n    \"fimReserva\": \"nov. 19, 2024\",\n    \"valorEstimado\": 35,\n    \"valorTotal\": 89.63\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Estudante",
+			"item": [
+				{
+					"name": "Buscar estudantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/estudante",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudante"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/estudante",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"estudante"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 22 Nov 2024 01:45:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "321"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"matricula\": 1,\n        \"nome\": \"Mr. Ellis Larson\",\n        \"email\": \"Torrance_Herzog@yahoo.com\",\n        \"data_criacao\": \"nov. 18, 2024\"\n    },\n    {\n        \"matricula\": 2,\n        \"nome\": \"Charlotte Schultz\",\n        \"email\": \"Manuela47@hotmail.com\",\n        \"data_criacao\": \"nov. 21, 2024\"\n    },\n    {\n        \"matricula\": 3,\n        \"nome\": \"Miss Emma Lebsack\",\n        \"email\": \"Dorris82@hotmail.com\",\n        \"data_criacao\": \"nov. 21, 2024\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Buscar estudante pela matricula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/estudante/:matricula",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudante",
+								":matricula"
+							],
+							"variable": [
+								{
+									"key": "matricula",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/estudante/:matricula",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"estudante",
+										":matricula"
+									],
+									"variable": [
+										{
+											"key": "matricula",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 22 Nov 2024 01:43:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "104"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"matricula\": 3,\n    \"nome\": \"Miss Emma Lebsack\",\n    \"email\": \"Dorris82@hotmail.com\",\n    \"data_criacao\": \"nov. 21, 2024\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar estudante pela matricula Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/estudante/:matricula",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudante",
+								":matricula"
+							],
+							"variable": [
+								{
+									"key": "matricula",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/estudante/:matricula",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"estudante",
+										":matricula"
+									],
+									"variable": [
+										{
+											"key": "matricula",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 21:25:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "409 - Estudante não registrado",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/estudante/:matricula",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"estudante",
+										":matricula"
+									],
+									"variable": [
+										{
+											"key": "matricula",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 21:25:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								}
+							],
+							"cookie": [],
+							"body": "Estudante não encontrado. matricula: 3"
+						},
+						{
+							"name": "409 - Há aluguei registrados",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/estudante/:matricula",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"estudante",
+										":matricula"
+									],
+									"variable": [
+										{
+											"key": "matricula",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 21:27:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								}
+							],
+							"cookie": [],
+							"body": "Não foi possível deletar Estudante: Há alugueis cadastrados"
+						}
+					]
+				},
+				{
+					"name": "Criar Estudante",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"{{$randomFullName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"senha\":  \"{{$randomPassword}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/estudante",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudante"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATED",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"{{$randomFullName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"senha\":  \"{{$randomPassword}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/estudante",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"estudante"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 22 Nov 2024 01:43:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "104"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"matricula\": 3,\n    \"nome\": \"Miss Emma Lebsack\",\n    \"email\": \"Dorris82@hotmail.com\",\n    \"data_criacao\": \"nov. 21, 2024\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualizar estudante",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"{{$randomFullName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"senha\":  \"{{$randomPassword}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/estudante/:matricula",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudante",
+								":matricula"
+							],
+							"variable": [
+								{
+									"key": "matricula",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"{{$randomFullName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"senha\":  \"{{$randomPassword}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/estudante/:matricula",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"estudante",
+										":matricula"
+									],
+									"variable": [
+										{
+											"key": "matricula",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 22 Nov 2024 01:42:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"matricula\": 1,\n    \"nome\": \"Mr. Ellis Larson\",\n    \"email\": \"Torrance_Herzog@yahoo.com\",\n    \"data_criacao\": \"nov. 18, 2024\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Livro",
+			"item": [
+				{
+					"name": "Buscar livro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/livro",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livro"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/livro",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livro"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 03:33:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1560"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"autorId\": 1,\n        \"categoriaId\": 1,\n        \"titulo\": \"Harry Potter e a Pedra Filosofal\",\n        \"descricao\": \"Primeiro livro da série Harry Potter.\",\n        \"linkImage\": \"https://link_imagem1.com\",\n        \"dataLancamento\": \"jun. 26, 1997\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 223,\n        \"valorDiaAlugado\": 3.5,\n        \"valorDiaMulta\": 1\n    },\n    {\n        \"id\": 2,\n        \"autorId\": 1,\n        \"categoriaId\": 1,\n        \"titulo\": \"Harry Potter e a Câmara Secreta\",\n        \"descricao\": \"Segundo livro da série Harry Potter.\",\n        \"linkImage\": \"https://link_imagem2.com\",\n        \"dataLancamento\": \"jul. 2, 1998\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 251,\n        \"valorDiaAlugado\": 3.5,\n        \"valorDiaMulta\": 1\n    },\n    {\n        \"id\": 3,\n        \"autorId\": 1,\n        \"categoriaId\": 1,\n        \"titulo\": \"Harry Potter e o Prisioneiro de Azkaban\",\n        \"descricao\": \"Terceiro livro da série Harry Potter.\",\n        \"linkImage\": \"https://link_imagem3.com\",\n        \"dataLancamento\": \"jul. 8, 1999\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 317,\n        \"valorDiaAlugado\": 3.5,\n        \"valorDiaMulta\": 1\n    },\n    {\n        \"id\": 4,\n        \"autorId\": 1,\n        \"categoriaId\": 1,\n        \"titulo\": \"Harry Potter e o Cálice de Fogo\",\n        \"descricao\": \"Quarto livro da série Harry Potter.\",\n        \"linkImage\": \"https://link_imagem4.com\",\n        \"dataLancamento\": \"jul. 8, 2000\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 636,\n        \"valorDiaAlugado\": 3.5,\n        \"valorDiaMulta\": 1\n    },\n    {\n        \"id\": 5,\n        \"autorId\": 1,\n        \"categoriaId\": 1,\n        \"titulo\": \"Harry Potter e a Ordem da Fênix\",\n        \"descricao\": \"Quinto livro da série Harry Potter.\",\n        \"linkImage\": \"https://link_imagem5.com\",\n        \"dataLancamento\": \"jun. 21, 2003\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 766,\n        \"valorDiaAlugado\": 3.5,\n        \"valorDiaMulta\": 1\n    },\n    {\n        \"id\": 6,\n        \"autorId\": 2,\n        \"categoriaId\": 1,\n        \"titulo\": \"A Guerra dos Tronos\",\n        \"descricao\": \"Primeiro livro das Crônicas de Gelo e Fogo.\",\n        \"linkImage\": \"https://link_imagem6.com\",\n        \"dataLancamento\": \"ago. 6, 1996\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 694,\n        \"valorDiaAlugado\": 4,\n        \"valorDiaMulta\": 1.5\n    },\n    {\n        \"id\": 7,\n        \"autorId\": 2,\n        \"categoriaId\": 1,\n        \"titulo\": \"A Fúria dos Reis\",\n        \"descricao\": \"Segundo livro das Crônicas de Gelo e Fogo.\",\n        \"linkImage\": \"https://link_imagem7.com\",\n        \"dataLancamento\": \"nov. 16, 1998\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 768,\n        \"valorDiaAlugado\": 4,\n        \"valorDiaMulta\": 1.5\n    },\n    {\n        \"id\": 8,\n        \"autorId\": 2,\n        \"categoriaId\": 1,\n        \"titulo\": \"A Tormenta de Espadas\",\n        \"descricao\": \"Terceiro livro das Crônicas de Gelo e Fogo.\",\n        \"linkImage\": \"https://link_imagem8.com\",\n        \"dataLancamento\": \"ago. 8, 2000\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 973,\n        \"valorDiaAlugado\": 4,\n        \"valorDiaMulta\": 1.5\n    },\n    {\n        \"id\": 9,\n        \"autorId\": 2,\n        \"categoriaId\": 1,\n        \"titulo\": \"O Festim dos Corvos\",\n        \"descricao\": \"Quarto livro das Crônicas de Gelo e Fogo.\",\n        \"linkImage\": \"https://link_imagem9.com\",\n        \"dataLancamento\": \"out. 17, 2005\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 753,\n        \"valorDiaAlugado\": 4,\n        \"valorDiaMulta\": 1.5\n    },\n    {\n        \"id\": 10,\n        \"autorId\": 2,\n        \"categoriaId\": 1,\n        \"titulo\": \"A Dança dos Dragões\",\n        \"descricao\": \"Quinto livro das Crônicas de Gelo e Fogo.\",\n        \"linkImage\": \"https://link_imagem10.com\",\n        \"dataLancamento\": \"jul. 12, 2011\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 1056,\n        \"valorDiaAlugado\": 4,\n        \"valorDiaMulta\": 1.5\n    },\n    {\n        \"id\": 11,\n        \"autorId\": 3,\n        \"categoriaId\": 1,\n        \"titulo\": \"O Senhor dos Anéis: A Sociedade do Anel\",\n        \"descricao\": \"Primeiro volume da trilogia O Senhor dos Anéis.\",\n        \"linkImage\": \"https://link_imagem11.com\",\n        \"dataLancamento\": \"jul. 29, 1954\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 423,\n        \"valorDiaAlugado\": 5,\n        \"valorDiaMulta\": 2\n    },\n    {\n        \"id\": 12,\n        \"autorId\": 3,\n        \"categoriaId\": 1,\n        \"titulo\": \"O Senhor dos Anéis: As Duas Torres\",\n        \"descricao\": \"Segundo volume da trilogia O Senhor dos Anéis.\",\n        \"linkImage\": \"https://link_imagem12.com\",\n        \"dataLancamento\": \"nov. 11, 1954\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 352,\n        \"valorDiaAlugado\": 5,\n        \"valorDiaMulta\": 2\n    },\n    {\n        \"id\": 13,\n        \"autorId\": 3,\n        \"categoriaId\": 1,\n        \"titulo\": \"O Senhor dos Anéis: O Retorno do Rei\",\n        \"descricao\": \"Terceiro volume da trilogia O Senhor dos Anéis.\",\n        \"linkImage\": \"https://link_imagem13.com\",\n        \"dataLancamento\": \"out. 20, 1955\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 416,\n        \"valorDiaAlugado\": 5,\n        \"valorDiaMulta\": 2\n    },\n    {\n        \"id\": 14,\n        \"autorId\": 3,\n        \"categoriaId\": 1,\n        \"titulo\": \"O Hobbit\",\n        \"descricao\": \"Prequela da trilogia O Senhor dos Anéis.\",\n        \"linkImage\": \"https://link_imagem14.com\",\n        \"dataLancamento\": \"set. 21, 1937\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 310,\n        \"valorDiaAlugado\": 5,\n        \"valorDiaMulta\": 2\n    },\n    {\n        \"id\": 15,\n        \"autorId\": 3,\n        \"categoriaId\": 6,\n        \"titulo\": \"O Silmarillion\",\n        \"descricao\": \"História do universo de O Senhor dos Anéis.\",\n        \"linkImage\": \"https://link_imagem15.com\",\n        \"dataLancamento\": \"set. 15, 1977\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 365,\n        \"valorDiaAlugado\": 5,\n        \"valorDiaMulta\": 2\n    },\n    {\n        \"id\": 16,\n        \"autorId\": 4,\n        \"categoriaId\": 5,\n        \"titulo\": \"O Assassinato no Expresso do Oriente\",\n        \"descricao\": \"Mistério clássico de Hercule Poirot.\",\n        \"linkImage\": \"https://link_imagem16.com\",\n        \"dataLancamento\": \"jan. 1, 1934\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 256,\n        \"valorDiaAlugado\": 3,\n        \"valorDiaMulta\": 1\n    },\n    {\n        \"id\": 17,\n        \"autorId\": 4,\n        \"categoriaId\": 5,\n        \"titulo\": \"E Não Sobrou Nenhum\",\n        \"descricao\": \"Um dos maiores clássicos de mistério.\",\n        \"linkImage\": \"https://link_imagem17.com\",\n        \"dataLancamento\": \"nov. 6, 1939\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 272,\n        \"valorDiaAlugado\": 3,\n        \"valorDiaMulta\": 1\n    },\n    {\n        \"id\": 18,\n        \"autorId\": 4,\n        \"categoriaId\": 5,\n        \"titulo\": \"Morte no Nilo\",\n        \"descricao\": \"Mistério passado no Egito.\",\n        \"linkImage\": \"https://link_imagem18.com\",\n        \"dataLancamento\": \"nov. 1, 1937\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 288,\n        \"valorDiaAlugado\": 3,\n        \"valorDiaMulta\": 1\n    },\n    {\n        \"id\": 19,\n        \"autorId\": 4,\n        \"categoriaId\": 5,\n        \"titulo\": \"A Casa Torta\",\n        \"descricao\": \"Outro clássico de mistério de Christie.\",\n        \"linkImage\": \"https://link_imagem19.com\",\n        \"dataLancamento\": \"mar. 19, 1949\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 256,\n        \"valorDiaAlugado\": 3,\n        \"valorDiaMulta\": 1\n    },\n    {\n        \"id\": 20,\n        \"autorId\": 4,\n        \"categoriaId\": 5,\n        \"titulo\": \"Os Cinco Porquinhos\",\n        \"descricao\": \"Investigação de um caso antigo.\",\n        \"linkImage\": \"https://link_imagem20.com\",\n        \"dataLancamento\": \"out. 1, 1942\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 288,\n        \"valorDiaAlugado\": 3,\n        \"valorDiaMulta\": 1\n    },\n    {\n        \"id\": 21,\n        \"autorId\": 5,\n        \"categoriaId\": 2,\n        \"titulo\": \"Fundação\",\n        \"descricao\": \"Primeiro livro da série Fundação.\",\n        \"linkImage\": \"https://link_imagem21.com\",\n        \"dataLancamento\": \"mai. 1, 1951\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 244,\n        \"valorDiaAlugado\": 4.5,\n        \"valorDiaMulta\": 1.5\n    },\n    {\n        \"id\": 22,\n        \"autorId\": 5,\n        \"categoriaId\": 2,\n        \"titulo\": \"Fundação e Império\",\n        \"descricao\": \"Segundo livro da série Fundação.\",\n        \"linkImage\": \"https://link_imagem22.com\",\n        \"dataLancamento\": \"jun. 1, 1952\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 247,\n        \"valorDiaAlugado\": 4.5,\n        \"valorDiaMulta\": 1.5\n    },\n    {\n        \"id\": 23,\n        \"autorId\": 5,\n        \"categoriaId\": 2,\n        \"titulo\": \"Segunda Fundação\",\n        \"descricao\": \"Terceiro livro da série Fundação.\",\n        \"linkImage\": \"https://link_imagem23.com\",\n        \"dataLancamento\": \"jun. 1, 1953\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 240,\n        \"valorDiaAlugado\": 4.5,\n        \"valorDiaMulta\": 1.5\n    },\n    {\n        \"id\": 24,\n        \"autorId\": 5,\n        \"categoriaId\": 2,\n        \"titulo\": \"Eu, Robô\",\n        \"descricao\": \"Coletânea de contos de ficção científica.\",\n        \"linkImage\": \"https://link_imagem24.com\",\n        \"dataLancamento\": \"dez. 2, 1950\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 253,\n        \"valorDiaAlugado\": 4.5,\n        \"valorDiaMulta\": 1.5\n    },\n    {\n        \"id\": 25,\n        \"autorId\": 5,\n        \"categoriaId\": 2,\n        \"titulo\": \"O Fim da Eternidade\",\n        \"descricao\": \"Um dos clássicos de viagem no tempo.\",\n        \"linkImage\": \"https://link_imagem25.com\",\n        \"dataLancamento\": \"ago. 1, 1955\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 191,\n        \"valorDiaAlugado\": 4.5,\n        \"valorDiaMulta\": 1.5\n    },\n    {\n        \"id\": 26,\n        \"autorId\": 6,\n        \"categoriaId\": 4,\n        \"titulo\": \"It: A Coisa\",\n        \"descricao\": \"Uma das maiores obras de King.\",\n        \"linkImage\": \"https://link_imagem26.com\",\n        \"dataLancamento\": \"set. 15, 1986\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 1138,\n        \"valorDiaAlugado\": 6,\n        \"valorDiaMulta\": 2.5\n    },\n    {\n        \"id\": 27,\n        \"autorId\": 6,\n        \"categoriaId\": 4,\n        \"titulo\": \"O Iluminado\",\n        \"descricao\": \"Clássico de terror psicológico.\",\n        \"linkImage\": \"https://link_imagem27.com\",\n        \"dataLancamento\": \"jan. 28, 1977\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 447,\n        \"valorDiaAlugado\": 6,\n        \"valorDiaMulta\": 2.5\n    },\n    {\n        \"id\": 28,\n        \"autorId\": 6,\n        \"categoriaId\": 4,\n        \"titulo\": \"Carrie, a Estranha\",\n        \"descricao\": \"Primeiro romance de King.\",\n        \"linkImage\": \"https://link_imagem28.com\",\n        \"dataLancamento\": \"abr. 5, 1974\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 199,\n        \"valorDiaAlugado\": 6,\n        \"valorDiaMulta\": 2.5\n    },\n    {\n        \"id\": 29,\n        \"autorId\": 6,\n        \"categoriaId\": 4,\n        \"titulo\": \"A Zona Morta\",\n        \"descricao\": \"Mistura de ficção científica e terror.\",\n        \"linkImage\": \"https://link_imagem29.com\",\n        \"dataLancamento\": \"ago. 30, 1979\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 426,\n        \"valorDiaAlugado\": 6,\n        \"valorDiaMulta\": 2.5\n    },\n    {\n        \"id\": 30,\n        \"autorId\": 6,\n        \"categoriaId\": 4,\n        \"titulo\": \"Doutor Sono\",\n        \"descricao\": \"Sequência de O Iluminado.\",\n        \"linkImage\": \"https://link_imagem30.com\",\n        \"dataLancamento\": \"set. 24, 2013\",\n        \"dataCriacao\": \"nov. 18, 2024\",\n        \"quantidadePaginas\": 531,\n        \"valorDiaAlugado\": 6,\n        \"valorDiaMulta\": 2.5\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Buscar livro por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/livro/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livro",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/livro/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livro",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 03:35:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "293"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"autorId\": 2,\n    \"categoriaId\": 1,\n    \"titulo\": \"A Guerra dos Tronos\",\n    \"descricao\": \"Primeiro livro das Crônicas de Gelo e Fogo.\",\n    \"linkImage\": \"https://link_imagem6.com\",\n    \"dataLancamento\": \"ago. 6, 1996\",\n    \"dataCriacao\": \"nov. 18, 2024\",\n    \"quantidadePaginas\": 694,\n    \"valorDiaAlugado\": 4,\n    \"valorDiaMulta\": 1.5\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar livro por ID Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/livro/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livro",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/livro/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livro",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "31"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 20:21:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "409 - Livro não registrado",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/livro/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livro",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "31"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 20:22:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								}
+							],
+							"cookie": [],
+							"body": "Livro não encontrado. id: 31"
+						},
+						{
+							"name": "409 - Há alugueis registrados",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/livro/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livro",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 20:22:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								}
+							],
+							"cookie": [],
+							"body": "Não foi possível deletar o Livro: Há Alugueis registrados"
+						}
+					]
+				},
+				{
+					"name": "Criar livro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"autorId\": 2,\r\n    \"categoriaId\": 3,\r\n    \"titulo\": \"A volta dos que não foram\",\r\n    \"descricao\": \"Uma breve história de superação da chegada aqueles que nunca se quer saíram\",\r\n    \"linkImage\": \"www.a-volta-dos-que-nao-foram.com.br\",\r\n    \"dataLancamento\": \"2024-11-22\",\r\n    \"quantidadePaginas\": 999,\r\n    \"valorDiaAlugado\": 150,\r\n    \"valorDiaMulta\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/livro",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livro"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATED",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"autorId\": 2,\r\n            \"categoriaId\": 3,\r\n            \"titulo\": \"A volta dos que não foram\",\r\n            \"descricao\": \"Uma breve história de superação da chegada aqueles que nunca se quer saíram\",\r\n            \"linkImage\": \"www.a-volta-dos-que-nao-foram.com.br\",\r\n            \"dataLancamento\": \"2024-11-22\",\r\n            \"quantidadePaginas\":999,\r\n            \"valorDiaAlugado\": 150,\r\n            \"valorDiaMulta\": 6\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/livro",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livro"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 03:53:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "351"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 31,\n    \"autorId\": 2,\n    \"categoriaId\": 3,\n    \"titulo\": \"A volta dos que não foram\",\n    \"descricao\": \"Uma breve história de superação da chegada aqueles que nunca se quer saíram\",\n    \"linkImage\": \"www.a-volta-dos-que-nao-foram.com.br\",\n    \"dataLancamento\": \"nov. 21, 2024\",\n    \"dataCriacao\": \"nov. 23, 2024\",\n    \"quantidadePaginas\": 999,\n    \"valorDiaAlugado\": 150,\n    \"valorDiaMulta\": 6\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualizar livro",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"autorId\": 2,\r\n    \"categoriaId\": 3,\r\n    \"titulo\": \"A volta dos que não foram parte 14ª\",\r\n    \"descricao\": \"Uma breve história de superação da chegada aqueles que nunca se quer saíram\",\r\n    \"linkImage\": \"www.a-volta-dos-que-nao-foram.com.br\",\r\n    \"dataLancamento\": \"2024-11-22\",\r\n    \"quantidadePaginas\": 999,\r\n    \"valorDiaAlugado\": 150,\r\n    \"valorDiaMulta\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/livro/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livro",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "31"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"autorId\": 2,\r\n    \"categoriaId\": 3,\r\n    \"titulo\": \"A volta dos que não foram parte 14ª\",\r\n    \"descricao\": \"Uma breve história de superação da chegada aqueles que nunca se quer saíram\",\r\n    \"linkImage\": \"www.a-volta-dos-que-nao-foram.com.br\",\r\n    \"dataLancamento\": \"2024-11-22\",\r\n    \"quantidadePaginas\": 999,\r\n    \"valorDiaAlugado\": 150,\r\n    \"valorDiaMulta\": 6\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/livro/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"livro",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "31"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 04:20:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "362"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 31,\n    \"autorId\": 2,\n    \"categoriaId\": 3,\n    \"titulo\": \"A volta dos que não foram parte 14ª\",\n    \"descricao\": \"Uma breve história de superação da chegada aqueles que nunca se quer saíram\",\n    \"linkImage\": \"www.a-volta-dos-que-nao-foram.com.br\",\n    \"dataLancamento\": \"nov. 21, 2024\",\n    \"dataCriacao\": \"nov. 23, 2024\",\n    \"quantidadePaginas\": 999,\n    \"valorDiaAlugado\": 150,\n    \"valorDiaMulta\": 6\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Autor",
+			"item": [
+				{
+					"name": "Buscar autores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/autor",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/autor",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"autor"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 22 Nov 2024 02:04:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "260"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 8,\n        \"nome\": \"A maior de todas\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"Agatha Christie\"\n    },\n    {\n        \"id\": 7,\n        \"nome\": \"Cleticia\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"George R.R. Martin\"\n    },\n    {\n        \"id\": 5,\n        \"nome\": \"Isaac Asimov\"\n    },\n    {\n        \"id\": 1,\n        \"nome\": \"J.K. Rowling\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"J.R.R. Tolkien\"\n    },\n    {\n        \"id\": 6,\n        \"nome\": \"Stephen King\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Buscar autor por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/autor/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/autor/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"autor",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 22 Nov 2024 02:01:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"nome\": \"George R.R. Martin\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletar autor por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/autor/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "409 - Autor não registrado",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/autor/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"autor",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 19:36:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								}
+							],
+							"cookie": [],
+							"body": "Autor não encontrado. id: 9"
+						},
+						{
+							"name": "409 - Há livros registrados",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/autor/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"autor",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 19:37:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "Não foi possícel deletar o autor: Há livros cadastrados."
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/autor/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"autor",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 19:38:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Criar autor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"A maior de todas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/autor",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATED",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"A maior de todas\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/autor",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"autor"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 22 Nov 2024 02:04:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 8,\n    \"nome\": \"A maior de todas\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualizar autor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"nome\": \"Cleticia\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/autor/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n    \"nome\": \"Cleticia\"\r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/autor/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"autor",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 22 Nov 2024 02:03:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 7,\n    \"nome\": \"Cleticia\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Buscar categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categoria",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categoria",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categoria"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 00:23:23 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "176"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Fantasia\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"Ficção Científica\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Suspense\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"Terror\"\n    },\n    {\n        \"id\": 5,\n        \"nome\": \"Mistério\"\n    },\n    {\n        \"id\": 6,\n        \"nome\": \"Clássicos\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Buscar categoria por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categoria/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categoria/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categoria",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 00:23:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"nome\": \"Mistério\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletar categoria por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categoria/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "409 - Há livros cadastrados",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categoria/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categoria",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 19:48:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								}
+							],
+							"cookie": [],
+							"body": "Não foi possícel deletar categoria: Há livros cadastrados."
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categoria/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categoria",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 19:49:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "409 - Categoria não registrada",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/categoria/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categoria",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 19:49:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								}
+							],
+							"cookie": [],
+							"body": "Categoria não encontrado. matricula: 7"
+						}
+					]
+				},
+				{
+					"name": "Criar categoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Ficção horrora\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/categoria",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATED",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Ficção horrora\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categoria",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categoria"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 00:25:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 7,\n    \"nome\": \"Ficção horrora\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualizar categoria",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Novo nome de categoria\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/categoria/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Novo nome de categoria\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/categoria/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"categoria",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 Nov 2024 00:27:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"nome\": \"Novo nome de categoria\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

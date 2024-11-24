@@ -9,7 +9,6 @@ CRUD em Java para um sistema de biblioteca.
 
 ## Execução do projeto
 
----
 Para execução do projeto basta clonar o repositório e abrir com a IDE Intellij Community e realizar a execução.
 
 Irá executar a **API - REST** em um servidor local na porta `8080`
@@ -17,8 +16,6 @@ Irá executar a **API - REST** em um servidor local na porta `8080`
 acesse: [localhost:8080]("localhost:8080")
 
 ## Bibliotecas
-
----
 
 - ### Javalin
 
@@ -49,12 +46,9 @@ banco de dados MySQL utilizado pelo projeto.
 
 ## Modelo Lógico
 
----
 ![PNG - Modelo Lógico.png](assets/PNG%20-%20Modelo%20L%C3%B3gico.png)
 
 ## Modelo físico
-
----
 
 ~~~text
 BEGIN;
@@ -176,7 +170,6 @@ src/main/java
 
 ## Documetação de endpoints
 
----
 Para acessar os endpoint com seus payload já configurados basta importar o arquivo JSON nas collections do seu **Postman
 **
 
@@ -187,8 +180,6 @@ Para acessar os endpoint com seus payload já configurados basta importar o arqu
 > ###### Não há regras de negócio para endpoints de Leitura (SELECT)
 
 ## Categoria
-
----
 
 - ### Create
     1. Verifica se já existe um registro de categoria com o mesmo nome
@@ -206,8 +197,6 @@ Para acessar os endpoint com seus payload já configurados basta importar o arqu
 
 ## Autor
 
----
-
 - ### Create
     1. Verifica se já existe um registro de autor(a) com o mesmo nome
     2. Registra o autor(a)
@@ -223,8 +212,6 @@ Para acessar os endpoint com seus payload já configurados basta importar o arqu
     3. Deleta o autor(a)
 
 ## Livro
-
----
 
 - ### Create
     1. Verifica se o livro existe
@@ -244,8 +231,6 @@ Para acessar os endpoint com seus payload já configurados basta importar o arqu
 
 ## Estudante
 
----
-
 - ### Create
     1. Verifica se já existe um registro de estudante com o mesmo email
     2. Registra Estudante
@@ -261,8 +246,6 @@ Para acessar os endpoint com seus payload já configurados basta importar o arqu
     3. Deleta o estudante
 
 ## Aluguel
-
----
 
 - ### Create
     1. Verifica se o estudante existe.
